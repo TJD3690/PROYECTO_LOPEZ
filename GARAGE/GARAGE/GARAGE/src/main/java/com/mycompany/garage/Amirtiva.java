@@ -7,5 +7,8 @@ package com.mycompany.garage;
 
 public class Amirtiva {
     int ga;
-    System.out.println("hola");
+
+    public static void main(String[] args) {
+        System.out.println("hola");    
+    }
 }
