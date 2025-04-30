@@ -7,10 +7,7 @@ public class Main {
         
         m.setVisible(true);
         
-        for(int i=0;i<15;i++)
-        {
-            System.out.println("JIJIJIJA");
-        }
+       
         
     }
 }
