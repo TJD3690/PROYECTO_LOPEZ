@@ -6,5 +6,6 @@ package com.mycompany.garage;
 
 
 public class Amirtiva {
-    System.out.println("");
+    int ga;
+    System.out.println("hola");
 }
