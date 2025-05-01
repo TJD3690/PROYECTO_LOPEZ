@@ -1,7 +1,7 @@
 package com.mycompany.garage;
 
 public class Vehículo {
-    private int id;
+    private String id;
     private String tipo;
     private String color;
     private String placa;
@@ -12,7 +12,8 @@ public class Vehículo {
     public Vehículo (){
     
     }
-    public Vehículo(int id, String tipo, String color, String placa, String modelo, String marca, String lunasPolarizadas) {
+
+    public Vehículo(String id, String tipo, String color, String placa, String modelo, String marca, String lunasPolarizadas) {
         this.id = id;
         this.tipo = tipo;
         this.color = color;
@@ -21,12 +22,13 @@ public class Vehículo {
         this.marca = marca;
         this.lunasPolarizadas = lunasPolarizadas;
     }
+    
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

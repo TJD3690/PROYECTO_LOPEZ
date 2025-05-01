@@ -4,9 +4,15 @@
  */
 package com.mycompany.garage;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 
 public class RegCarro extends javax.swing.JFrame {
@@ -25,9 +31,12 @@ public class RegCarro extends javax.swing.JFrame {
         modelo.addColumn("Marca");
         modelo.addColumn("Modelo");
         modelo.addColumn("Lunas Polarizadas"); 
+        
+        
+        cargarVehiculosGuardados();
         refrescarTabla();
     }
-     
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -337,24 +346,29 @@ public class RegCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLOGINActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-            Vehículo vehiculo= new Vehículo();
+        Vehículo vehiculo= new Vehículo();
             
-        int id;
+        
         try {
+            
+        vehiculo.setId("");
         vehiculo.setTipo(cbxTipVehiculo.getSelectedItem().toString());
         vehiculo.setColor(cbxColorVehi.getSelectedItem().toString());
         vehiculo.setPlaca(txtNumPlaca.getText());
         vehiculo.setModelo(cbxModelo.getSelectedItem().toString());
         vehiculo.setMarca(cbxMarca.getSelectedItem().toString());
         vehiculo.setLunasPolarizadas(cbxLunaPolarizada.getSelectedItem().toString());
-            listaCarros.add(vehiculo);
-            refrescarTabla();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "##¡ERROR al agregar!##");
-        }
         
         if (!(vehiculo.validarCampos())){
             JOptionPane.showMessageDialog(this, "##¡Inserte todos los elementos!##");
+        }
+        
+        listaCarros.add(vehiculo);
+        
+        refrescarTabla();
+        guardarVehiculos();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "##¡ERROR al agregar!##");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -373,19 +387,68 @@ public class RegCarro extends javax.swing.JFrame {
         }
         for (Vehículo carro : listaCarros) {
             Object vh[] = new Object [7];
-            vh[1]=null;
+            vh[0]="";
             vh[1]=carro.getTipo();
             vh[2]=carro.getColor();
             vh[3]=carro.getPlaca();
             vh[4]=carro.getMarca();
             vh[5]=carro.getModelo();
-            vh[6]=carro.getModelo();
+            vh[6]=carro.getLunasPolarizadas();
             modelo.addRow(vh);
             
         }
         tablitaCarros.setModel(modelo);
     }
     
+    public void guardarVehiculos() {
+    // Mensaje de depuración para verificar cuántos vehículos se están guardando
+    
+    
+    try (FileWriter FW = new FileWriter("C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\PROYECTO1_LOPEZ\\GARAGE\\GARAGE\\GARAGE\\Data\\Vehiculos.dat");PrintWriter PW = new PrintWriter(FW);BufferedWriter BW = new BufferedWriter(FW);) {
+        
+        for (Vehículo carro : listaCarros) {
+                    String LINE =
+                    
+                    carro.getTipo().trim() + "|" +
+                    carro.getColor().trim() + "|" +
+                    carro.getPlaca().trim() + "|" +
+                    carro.getMarca().trim() + "|" +
+                    carro.getModelo().trim() + "|" +
+                    carro.getLunasPolarizadas().trim();
+                    BW.write(LINE);
+                    BW.write("\n");
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
+    public void cargarVehiculosGuardados() {
+        try(FileReader FR = new FileReader("C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\PROYECTO1_LOPEZ\\GARAGE\\GARAGE\\GARAGE\\Data\\Vehiculos.dat");BufferedReader BR= new BufferedReader(FR)){
+            String LINEA=BR.readLine();
+            while (LINEA != null) {
+
+
+            String[] datos = LINEA.split("\\|");//Separador segun \\ y busca "|"
+
+            if (datos.length == 6) {
+                Vehículo vehiculo = new Vehículo();
+                vehiculo.setTipo(datos[0].trim());
+                vehiculo.setColor(datos[1].trim());
+                vehiculo.setPlaca(datos[2].trim());
+                vehiculo.setMarca(datos[3].trim());
+                vehiculo.setModelo(datos[4].trim());
+                vehiculo.setLunasPolarizadas(datos[5].trim());
+                listaCarros.add(vehiculo);
+            }
+            LINEA = BR.readLine(); 
+        }
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(this,"Error al leer");
+            e.printStackTrace();
+            }
+        }
+       
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
