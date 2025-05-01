@@ -26,28 +26,253 @@ public class RegCarro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnLOGIN = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        ListaCarro = new javax.swing.JLabel();
+        RTipoVehi = new javax.swing.JComboBox<>();
+        ColorVehi = new javax.swing.JLabel();
+        TipoVehi = new javax.swing.JLabel();
+        NumPlaca = new javax.swing.JLabel();
+        Marca = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        LunasPola = new javax.swing.JLabel();
+        RColorVehi = new javax.swing.JComboBox<>();
+        Modelo = new javax.swing.JLabel();
+        RNumPlaca = new javax.swing.JTextField();
+        RLunaPola = new javax.swing.JComboBox<>();
+        RModelo = new javax.swing.JComboBox<>();
+        RMarca = new javax.swing.JComboBox<>();
+        Guardar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tablita = new javax.swing.JTable();
+        RegCarro1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
+        btnLOGIN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnLOGIN.setText("Acceder");
+        btnLOGIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLOGINActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        ListaCarro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ListaCarro.setText("Lista de Carros");
+
+        RTipoVehi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        RTipoVehi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sedan                                                                                            ", "SUV                                                                                                ", "Pickup", "Otro", "No especificado                                                                                                     " }));
+        RTipoVehi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RTipoVehiActionPerformed(evt);
+            }
+        });
+
+        ColorVehi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ColorVehi.setText("Color");
+
+        TipoVehi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TipoVehi.setText("Tipo de vehiculo");
+
+        NumPlaca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NumPlaca.setText("Num. Placa");
+
+        Marca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Marca.setText("Marca");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        LunasPola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LunasPola.setText("Lunas Polarizadas");
+
+        RColorVehi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        RColorVehi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No especificado                                                                          ", "blanco", "negro ", "gris ", "plateado ", "azul ", "rojo ", "marrón/beige ", "verde ", "amarillo/dorado" }));
+        RColorVehi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RColorVehiActionPerformed(evt);
+            }
+        });
+
+        Modelo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Modelo.setText("Modelo");
+
+        RNumPlaca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        RNumPlaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RNumPlacaActionPerformed(evt);
+            }
+        });
+
+        RLunaPola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        RLunaPola.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sí", "No", "No se" }));
+        RLunaPola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RLunaPolaActionPerformed(evt);
+            }
+        });
+
+        RModelo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        RModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TOYOTA", "YARIS", "COROLLA", "LEXUS", "NISSAN", "SENTRA", "SUNNY", "TIDA", "VERSA", "HONDA", "FORD", "Otro" }));
+        RModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RModeloActionPerformed(evt);
+            }
+        });
+
+        RMarca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        RMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TOYOTA", "NISSAN", "HONDA", "FORD", "Otro" }));
+        RMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RMarcaActionPerformed(evt);
+            }
+        });
+
+        Guardar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Guardar.setText("Guardar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarActionPerformed(evt);
+            }
+        });
+
+        Tablita.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Tipo de vehiculo", "Color", "Num. Placa", "Marca", "Modelo", "Lunas Polarizadas"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        Tablita.setGridColor(new java.awt.Color(153, 153, 153));
+        Tablita.setRowHeight(25);
+        Tablita.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        Tablita.setShowGrid(true);
+        jScrollPane1.setViewportView(Tablita);
+
+        RegCarro1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        RegCarro1.setText("Registro de Carro");
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setText("Eliminar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 27, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 907, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TipoVehi)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(RTipoVehi, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(RColorVehi, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(ColorVehi, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(136, 136, 136)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NumPlaca)
+                                    .addComponent(RNumPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(51, 51, 51))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(Guardar)
+                                .addGap(88, 88, 88)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Marca)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(RMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Modelo)
+                                    .addComponent(RModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(35, 35, 35)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LunasPola)
+                                    .addComponent(RLunaPola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGap(647, 647, 647)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ListaCarro)
+                .addGap(389, 389, 389))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(376, 376, 376)
+                    .addComponent(RegCarro1)
+                    .addContainerGap(377, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(jLabel8)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoVehi)
+                    .addComponent(ColorVehi)
+                    .addComponent(Marca)
+                    .addComponent(LunasPola)
+                    .addComponent(Modelo)
+                    .addComponent(NumPlaca))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RTipoVehi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RColorVehi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RNumPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RLunaPola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Guardar)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(ListaCarro)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(RegCarro1)
+                    .addContainerGap(555, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -63,6 +288,42 @@ public class RegCarro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RTipoVehiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RTipoVehiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RTipoVehiActionPerformed
+
+    private void RColorVehiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RColorVehiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RColorVehiActionPerformed
+
+    private void RLunaPolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RLunaPolaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RLunaPolaActionPerformed
+
+    private void RModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RModeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RModeloActionPerformed
+
+    private void RMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RMarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RMarcaActionPerformed
+
+    private void btnLOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLOGINActionPerformed
+    
+    }//GEN-LAST:event_btnLOGINActionPerformed
+
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GuardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void RNumPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RNumPlacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RNumPlacaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,7 +361,26 @@ public class RegCarro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel ColorVehi;
+    private javax.swing.JButton Guardar;
+    private javax.swing.JLabel ListaCarro;
+    private javax.swing.JLabel LunasPola;
+    private javax.swing.JLabel Marca;
+    private javax.swing.JLabel Modelo;
+    private javax.swing.JLabel NumPlaca;
+    private javax.swing.JComboBox<String> RColorVehi;
+    private javax.swing.JComboBox<String> RLunaPola;
+    private javax.swing.JComboBox<String> RMarca;
+    private javax.swing.JComboBox<String> RModelo;
+    private javax.swing.JTextField RNumPlaca;
+    private javax.swing.JComboBox<String> RTipoVehi;
+    private javax.swing.JLabel RegCarro1;
+    private javax.swing.JTable Tablita;
+    private javax.swing.JLabel TipoVehi;
+    private javax.swing.JButton btnLOGIN;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

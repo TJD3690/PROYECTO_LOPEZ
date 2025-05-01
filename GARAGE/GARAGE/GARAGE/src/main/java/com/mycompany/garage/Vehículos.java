@@ -48,7 +48,7 @@ public class Vehículos extends javax.swing.JFrame {
         jLabel2.setText("Tipo de vehículo");
 
         cbxTipoVehiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cbxTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No especificado                                                                          ", "Sedan                                                                                            ", "SUV                                                                                                ", "Pickup                                                                                           " }));
+        cbxTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sedan                                                                                            ", "SUV                                                                                                ", "Pickup", "No especificado                                                                                                     " }));
         cbxTipoVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxTipoVehiculoActionPerformed(evt);
@@ -115,7 +115,9 @@ public class Vehículos extends javax.swing.JFrame {
                                 .addComponent(cbxTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(cbxColorVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(14, 14, 14)))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
