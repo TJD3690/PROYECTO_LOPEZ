@@ -15,6 +15,7 @@ public class RegClientes extends javax.swing.JFrame {
      */
     public RegClientes() {
         initComponents();
+        this.setTitle("REGISTRO DE CLIENTES");
     }
 
     /**
@@ -54,9 +55,12 @@ public class RegClientes extends javax.swing.JFrame {
         ListaCarro.setText("Lista de Carros");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(163, 178, 176));
 
+        jLabel1.setBackground(new java.awt.Color(4, 160, 142));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Registro de Clientes");
+        jLabel1.setForeground(new java.awt.Color(4, 160, 142));
+        jLabel1.setText("REGISTRO DE CLIENTES");
 
         jLabel2.setText("DNI/Carnet de extranjería(Pasaporte)");
 
@@ -77,24 +81,28 @@ public class RegClientes extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setText("Nacionalidad");
 
+        RNomyApe.setBackground(new java.awt.Color(204, 204, 204));
         RNomyApe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RNomyApeActionPerformed(evt);
             }
         });
 
+        RDireccion.setBackground(new java.awt.Color(204, 204, 204));
         RDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RDireccionActionPerformed(evt);
             }
         });
 
+        RCorreo.setBackground(new java.awt.Color(204, 204, 204));
         RCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RCorreoActionPerformed(evt);
             }
         });
 
+        RNacio.setBackground(new java.awt.Color(204, 204, 204));
         RNacio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         RNacio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Peruana", "Extranjera" }));
         RNacio.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +111,7 @@ public class RegClientes extends javax.swing.JFrame {
             }
         });
 
+        DniCarnet.setBackground(new java.awt.Color(204, 204, 204));
         DniCarnet.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         DniCarnet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Carnet de Extranjeria" }));
         DniCarnet.addActionListener(new java.awt.event.ActionListener() {
@@ -111,14 +120,17 @@ public class RegClientes extends javax.swing.JFrame {
             }
         });
 
+        RSexo.setBackground(new java.awt.Color(204, 204, 204));
         RSexo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         RSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer", "Prefiero no decirlo", " " }));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel18.setText("Distrito");
 
+        RDistrito.setBackground(new java.awt.Color(204, 204, 204));
         RDistrito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ancón", "Ate", "Barranco", "Breña", "Carabayllo", "Chaclacayo", "Chorrillos", "Cieneguilla", "Comas", "El Agustino", "Independencia", "Jesús María", "La Molina", "La Victoria", "Lima", "Lince", "Los Olivos", "Lurigancho", "Lurín", "Magdalena del Mar", "Miraflores", "Pachacámac", "Pucusana", "Pueblo Libre", "Puente Piedra", "Punta Hermosa", "Punta Negra", "Rímac", "San Bartolo", "San Borja", "San Isidro", "San Juan de Lurigancho", "San Juan de Miraflores", "San Luis", "San Martín de Porres", "San Miguel", "Santa Anita", "Santa María del Mar", "Santa Rosa", "Santiago de Surco", "Surquillo", "Villa El Salvador", "Villa María del Triunfo​" }));
 
+        Tablita2.setBackground(new java.awt.Color(204, 204, 204));
         Tablita2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -145,9 +157,11 @@ public class RegClientes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Tablita2);
 
         ListaCarro1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ListaCarro1.setForeground(new java.awt.Color(4, 160, 142));
         ListaCarro1.setText("Lista de Clientes");
 
         Guardar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Guardar.setForeground(new java.awt.Color(4, 160, 142));
         Guardar.setText("Guardar");
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +170,7 @@ public class RegClientes extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(4, 160, 142));
         jButton2.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -209,18 +224,19 @@ public class RegClientes extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(387, 387, 387)
-                        .addComponent(ListaCarro1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(370, 370, 370)
-                        .addComponent(jLabel1)))
+                        .addComponent(ListaCarro1)))
                 .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(330, 330, 330))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -230,12 +246,13 @@ public class RegClientes extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(RNomyApe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RNacio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DniCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Rlicencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(RNomyApe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RNacio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DniCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)

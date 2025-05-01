@@ -1,4 +1,3 @@
-
 package com.mycompany.garage;
 
 
@@ -11,7 +10,7 @@ public class ControlAcceso extends javax.swing.JFrame {
 
     Libreria LIB = new Libreria();
     
-    Principal OBJ;
+    Principal OBJ; 
     
     public ControlAcceso() {
         initComponents();
@@ -173,7 +172,7 @@ public class ControlAcceso extends javax.swing.JFrame {
         BufferedReader BR = null;
         String LINE = "";
         try {
-            FR = new FileReader("C:\\Users\\PCB\\Desktop\\POO\\GARAGE\\GARAGE\\Data\\Usuarios.dat");
+            FR = new FileReader("C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\PROYECTO1_LOPEZ\\GARAGE\\GARAGE\\GARAGE\\Data\\Usuarios.dat");
             BR = new BufferedReader(FR);
             LINE = BR.readLine();
             SW= false;

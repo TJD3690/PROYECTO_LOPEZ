@@ -5,15 +5,17 @@ package com.mycompany.garage;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author PCB
- */
 public class Principal extends javax.swing.JFrame {
 
+    Libreria LIB = new Libreria();
+    
+    RegCarro OBJ1; 
+    
     //Principal es la ventana
     public Principal() {
         initComponents();
+        this.setTitle("SISTEMA DE GESTIÓN DE ESTACIONAMIENTO");
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -30,11 +32,14 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel3.setBackground(new java.awt.Color(163, 178, 176));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 153, 0)));
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(4, 160, 142));
 
-        RCarro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        RCarro.setBackground(new java.awt.Color(4, 160, 142));
+        RCarro.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        RCarro.setForeground(new java.awt.Color(255, 255, 255));
         RCarro.setText("Registrar carro");
         RCarro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,7 +47,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        RCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        RCliente.setBackground(new java.awt.Color(4, 160, 142));
+        RCliente.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        RCliente.setForeground(new java.awt.Color(255, 255, 255));
         RCliente.setText("Registrar cliente");
         RCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,22 +63,24 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RCarro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RCliente)
+                    .addComponent(RCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(199, 199, 199)
+                .addGap(85, 85, 85)
                 .addComponent(RCarro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(29, 29, 29)
                 .addComponent(RCliente)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        LOGOUT.setBackground(new java.awt.Color(204, 204, 204));
         LOGOUT.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        LOGOUT.setForeground(new java.awt.Color(4, 160, 142));
         LOGOUT.setText("LOG OUT");
         LOGOUT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +89,8 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jLabel1.setText("SISTEMA DE GESTIO DE ESTACIONAMIENTO");
+        jLabel1.setForeground(new java.awt.Color(4, 160, 142));
+        jLabel1.setText("SISTEMA DE GESTIÓN DE ESTACIONAMIENTO");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("ARBOLITOS FIIS");
@@ -93,28 +103,28 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(177, 177, 177)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel1)))
-                        .addContainerGap(71, Short.MAX_VALUE))
+                        .addGap(228, 228, 228)
+                        .addComponent(jLabel2)
+                        .addContainerGap(249, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LOGOUT)
-                        .addGap(43, 43, 43))))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(LOGOUT)
+                                .addGap(43, 43, 43))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(21, 21, 21))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(55, 55, 55)
+                .addGap(51, 51, 51)
                 .addComponent(LOGOUT)
                 .addGap(24, 24, 24))
         );
@@ -134,7 +144,11 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LOGOUTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGOUTActionPerformed
-        // TODO add your handling code here:
+       dispose(); 
+       for (java.awt.Window window : java.awt.Window.getWindows()) 
+       { if (window instanceof ControlAcceso){ window.dispose(); }
+       } ControlAcceso nuevoLogin = new ControlAcceso();
+       nuevoLogin.setVisible(true);
     }//GEN-LAST:event_LOGOUTActionPerformed
 
     private void RClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RClienteActionPerformed
@@ -142,7 +156,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_RClienteActionPerformed
 
     private void RCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RCarroActionPerformed
-        // TODO add your handling code here:
+            OBJ1 = new RegCarro();
+            OBJ1.setVisible(true);
+            
     }//GEN-LAST:event_RCarroActionPerformed
 
     
