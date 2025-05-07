@@ -16,6 +16,7 @@ public class RegClientes extends javax.swing.JFrame {
     public RegClientes() {
         initComponents();
         this.setTitle("REGISTRO DE CLIENTES");
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
     }
 
     /**

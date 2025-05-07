@@ -152,7 +152,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_LOGOUTActionPerformed
 
     private void RClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RClienteActionPerformed
-        // TODO add your handling code here:
+                RegClientes OBJ2= new RegClientes();
+                OBJ2.setVisible(true);
     }//GEN-LAST:event_RClienteActionPerformed
 
     private void RCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RCarroActionPerformed

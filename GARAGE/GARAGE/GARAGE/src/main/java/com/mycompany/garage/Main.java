@@ -6,7 +6,7 @@ public class Main {
         ControlAcceso m = new ControlAcceso();
         
         m.setVisible(true);
-        
+        m.setLocationRelativeTo(null);
        
         
     }

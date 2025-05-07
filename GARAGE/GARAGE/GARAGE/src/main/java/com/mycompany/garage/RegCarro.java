@@ -23,6 +23,7 @@ public class RegCarro extends javax.swing.JFrame {
         initComponents();
         this.setTitle("REGISTRO DE AUTOS");
         this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         
         modelo.addColumn("Id");
         modelo.addColumn("Tipo de vehiculo");

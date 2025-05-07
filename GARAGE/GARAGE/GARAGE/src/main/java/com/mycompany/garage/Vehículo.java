@@ -12,7 +12,7 @@ public class Vehículo {
     public Vehículo (){
     
     }
-
+    
     public Vehículo(String id, String tipo, String color, String placa, String modelo, String marca, String lunasPolarizadas) {
         this.id = id;
         this.tipo = tipo;
